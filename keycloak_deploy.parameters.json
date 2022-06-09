@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "vmname": {
-            "value": "pulsekeycloakvm"
+            "value": "pulsesandboxvm"
         },
         "password": {
             "value": "Keycloak@123"
