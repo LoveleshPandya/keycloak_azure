@@ -65,7 +65,7 @@ EOF
 
 cat > ca-csr.json <<EOF
 {
-  "CN": "admin.cuda.local",
+  "CN": "admin.pulsesandbox.local",
   "key": {
     "algo": "rsa",
     "size": 2048
@@ -93,7 +93,7 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 
 cat > keycloak-csr.json <<EOF
 {
-  "CN": "keycloak.cuda.local",
+  "CN": "keycloak.pulsesandbox.local",
   "key": {
     "algo": "rsa",
     "size": 2048
@@ -114,7 +114,7 @@ cfssl gencert \
   -ca=ca.pem \
   -ca-key=ca-key.pem \
   -config=ca-config.json \
-  -hostname=keycloak.cudanet.com \
+  -hostname=keycloak.pulsesandbox.com \
   -profile=keycloak \
   keycloak-csr.json | cfssljson -bare keycloak
 
@@ -133,7 +133,7 @@ server {
     
     listen 80;
     listen 443 default ssl;
-    server_name keycloak.cudanet.com;
+    server_name keycloak.pulsesandbox.com;
 
     ssl_certificate           /etc/nginx/cert.crt;
     ssl_certificate_key       /etc/nginx/cert.key;
@@ -155,7 +155,7 @@ server {
       proxy_pass          http://localhost:8080;
       proxy_read_timeout  90;
 
-      proxy_redirect      http://localhost:8080 https://keycloak.cudanet.com;
+      proxy_redirect      http://localhost:8080 https://keycloak.pulsesandbox.com;
       
     }
   }
