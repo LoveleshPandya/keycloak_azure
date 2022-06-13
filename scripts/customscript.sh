@@ -25,12 +25,12 @@ sudo systemctl enable docker
 sudo groupadd docker
 #sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 #sudo chmod +x /usr/local/bin/docker-compose
-wget -q --show-progress --https-only --timestamping \
-  https://storage.googleapis.com/kubernetes-the-hard-way/cfssl/1.4.1/linux/cfssl \
-  https://storage.googleapis.com/kubernetes-the-hard-way/cfssl/1.4.1/linux/cfssljson
+# wget -q --show-progress --https-only --timestamping \
+#   https://storage.googleapis.com/kubernetes-the-hard-way/cfssl/1.4.1/linux/cfssl \
+#   https://storage.googleapis.com/kubernetes-the-hard-way/cfssl/1.4.1/linux/cfssljson
 
-chmod +x cfssl cfssljson
-sudo mv cfssl cfssljson /usr/local/bin/
+# chmod +x cfssl cfssljson
+# sudo mv cfssl cfssljson /usr/local/bin/
 
 sudo apt-get -y install nginx
 
